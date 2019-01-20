@@ -17,7 +17,7 @@ describe 'fazer uma requisicao', :httPost do
         'Content-Type': 'application/json'
         }
 
-        HTTParty.post('', body: @body, headers: @headers )
+        HTTParty.post('https://api-de-tarefas.herokuapp.com/contacts', body: @body, headers: @headers )
         
 
     end
