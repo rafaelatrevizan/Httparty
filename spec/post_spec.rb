@@ -1,7 +1,6 @@
 describe 'fazer uma requisicao', :httPost do
     it 'post' do
-        @body = 
-        {
+        @body = {
             "name": "bruno batista 100",
             "last_name": "batista 100",
             "email": "brunotop100@gmail.com",
@@ -12,13 +11,16 @@ describe 'fazer uma requisicao', :httPost do
             "city": "Belo Horizonte"
         }.to_json
         
-        @headers {
-        "Accept": 'application/vnd.tasksmanager.v2', 
-        'Content-Type': 'application/json'
-        }
+        #forma simples do httparty
+        # @headers = {
+        # "Accept": 'application/vnd.tasksmanager.v2', 
+        # 'Content-Type': 'application/json'
+        # }
 
-        HTTParty.post('https://api-de-tarefas.herokuapp.com/contacts', body: @body, headers: @headers )
-        
+        # @teste = HTTParty.post('https://api-de-tarefas.herokuapp.com/contacts', body: @body, headers: @headers )
+        # puts @teste
 
+        @teste = Contato.post('/contacts', body: @body)
+        puts @teste
     end
 end

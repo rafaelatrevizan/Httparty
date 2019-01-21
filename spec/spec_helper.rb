@@ -1,14 +1,20 @@
 require 'httparty'
 require 'httparty/request'
 require 'httparty/response/headers'
+require 'faker'
 
 #eferencia de onde esta o arquivo de modulo Contato
 require_relative '../services/contatos_service.rb'
+require_relative '../services/criar_service.rb'
 
 RSpec.configure do |config|
   #modulo esta como global
   include Contato
+  include Criar
 
+  config.color = true
+  config.formatter = :documentation
+  
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

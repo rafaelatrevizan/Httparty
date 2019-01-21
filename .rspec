@@ -1,2 +1,4 @@
 --require spec_helper
 --tag ~nao_teste_tag
+--format html --out results/rspec_results.html
+--format html --out results/rspec_results.json
