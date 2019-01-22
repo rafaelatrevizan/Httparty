@@ -283,14 +283,14 @@ a {
   <dl style="margin-left: 0px;">
   <dt id="example_group_1" class="passed">usando around</dt>
     <script type="text/javascript">moveProgressBar('6.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">teste padrão</span><span class='duration'>0.00214s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">teste padrão</span><span class='duration'>0.00250s</span></dd>
   </dl>
 </div>
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_2" class="passed">usando hooks</dt>
     <script type="text/javascript">moveProgressBar('12.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">teste padrão</span><span class='duration'>0.00058s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">teste padrão</span><span class='duration'>0.00081s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
@@ -302,7 +302,7 @@ a {
   <dl style="margin-left: 15px;">
   <dt id="example_group_4" class="passed">somar dois numeros</dt>
     <script type="text/javascript">moveProgressBar('18.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">positivos</span><span class='duration'>0.01860s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">positivos</span><span class='duration'>0.00205s</span></dd>
     <script type="text/javascript">moveProgressBar('25.0');</script>
     <dd class="example passed"><span class="passed_spec_name">negativos</span><span class='duration'>0.00030s</span></dd>
   </dl>
@@ -310,24 +310,60 @@ a {
 <div id="div_group_5" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_5" class="passed">fazer um delete</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_5');</script>
+    <script type="text/javascript">makeRed('example_group_5');</script>
     <script type="text/javascript">moveProgressBar('31.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">delete</span><span class='duration'>0.62419s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">delete</span>
+      <span class="duration">0.47803s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: @requestPut = Contato.delete(&#39;/contacts/336&#39;)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/delete_spec.rb:3:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/delete_spec.rb:3:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">1</span><span class="keyword">describe</span> <span class="string"><span class="delimiter">'</span><span class="content">fazer um delete</span><span class="delimiter">'</span></span>, <span class="symbol">:httDelete</span> <span class="keyword">do</span>
+<span class="linenum">2</span>        <span class="keyword">it</span> <span class="string"><span class="delimiter">'</span><span class="content">delete</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+<span class="offending"><span class="linenum">3</span>            <span class="instance-variable">@requestPut</span> = <span class="constant">Contato</span>.delete(<span class="string"><span class="delimiter">'</span><span class="content">/contacts/336</span><span class="delimiter">'</span></span>)</span>
+<span class="linenum">4</span>            puts <span class="instance-variable">@requestPut</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_6" class="passed">soma</dt>
     <script type="text/javascript">moveProgressBar('37.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">dois numeros</span><span class='duration'>0.00060s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">dois numeros</span><span class='duration'>0.00058s</span></dd>
     <script type="text/javascript">moveProgressBar('43.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">dois numeros negativos</span><span class='duration'>0.00059s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">dois numeros negativos</span><span class='duration'>0.00043s</span></dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_7" class="passed">fazer uma requisicao</dt>
+    <script type="text/javascript">makeRed('div_group_7');</script>
+    <script type="text/javascript">makeRed('example_group_7');</script>
     <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">get</span><span class='duration'>0.90665s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">get</span>
+      <span class="duration">0.29220s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>  Failure/Error: @melhor_opcao = Contato.get(&#39;/contacts&#39;)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/get_spec.rb:7:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/get_spec.rb:7:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">5</span>        <span class="comment"># puts  @primeira_opcao</span>
+<span class="linenum">6</span>
+<span class="offending"><span class="linenum">7</span>        <span class="instance-variable">@melhor_opcao</span> = <span class="constant">Contato</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/contacts</span><span class="delimiter">'</span></span>)</span>
+<span class="linenum">8</span>        puts <span class="instance-variable">@melhor_opcao</span>
+<span class="linenum">9</span>        </code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
@@ -339,14 +375,32 @@ a {
   <dl style="margin-left: 15px;">
   <dt id="example_group_9" class="passed">dois numeros</dt>
     <script type="text/javascript">moveProgressBar('56.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">uma soma</span><span class='duration'>0.00029s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">uma soma</span><span class='duration'>0.00073s</span></dd>
   </dl>
 </div>
 <div id="div_group_10" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_10" class="passed">fazer uma requisicao</dt>
+    <script type="text/javascript">makeRed('div_group_10');</script>
+    <script type="text/javascript">makeRed('example_group_10');</script>
     <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">post</span><span class='duration'>0.55562s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">post</span>
+      <span class="duration">0.29550s</span>
+      <div class="failure" id="failure_3">
+        <div class="message"><pre>  Failure/Error: @teste = Contato.post(&#39;/contacts&#39;, body: @body)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/post_spec.rb:23:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/post_spec.rb:23:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">21</span>        <span class="comment"># puts @teste</span>
+<span class="linenum">22</span>
+<span class="offending"><span class="linenum">23</span>        <span class="instance-variable">@teste</span> = <span class="constant">Contato</span>.post(<span class="string"><span class="delimiter">'</span><span class="content">/contacts</span><span class="delimiter">'</span></span>, <span class="key">body</span>: <span class="instance-variable">@body</span>)</span>
+<span class="linenum">24</span>        puts <span class="instance-variable">@teste</span>
+<span class="linenum">25</span>    <span class="keyword">end</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_11" class="example_group passed">
@@ -357,42 +411,112 @@ a {
 <div id="div_group_12" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_12" class="passed">alterar dados</dt>
+    <script type="text/javascript">makeRed('div_group_12');</script>
+    <script type="text/javascript">makeRed('example_group_12');</script>
     <script type="text/javascript">moveProgressBar('68.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">put</span><span class='duration'>0.57357s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">put</span>
+      <span class="duration">0.27724s</span>
+      <div class="failure" id="failure_4">
+        <div class="message"><pre>  Failure/Error: @requestPut = Contato.put(&#39;/contacts/336&#39;, body: @bodyPut)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/put_patch_spec.rb:16:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/put_patch_spec.rb:16:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">14</span>            }.to_json
+<span class="linenum">15</span>
+<span class="offending"><span class="linenum">16</span>            <span class="instance-variable">@requestPut</span> = <span class="constant">Contato</span>.put(<span class="string"><span class="delimiter">'</span><span class="content">/contacts/336</span><span class="delimiter">'</span></span>, <span class="key">body</span>: <span class="instance-variable">@bodyPut</span>)</span>
+<span class="linenum">17</span>            puts <span class="instance-variable">@requestPut</span>
+<span class="linenum">18</span>            </code></pre>
+      </div>
+    </dd>
     <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">patch</span><span class='duration'>0.56817s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">patch</span>
+      <span class="duration">0.28170s</span>
+      <div class="failure" id="failure_5">
+        <div class="message"><pre>  Failure/Error: @requestPatch = Contato.patch(&#39;/contacts/325&#39;, body: @bodyPatch)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/put_patch_spec.rb:30:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/put_patch_spec.rb:30:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">28</span>            }.to_json
+<span class="linenum">29</span>
+<span class="offending"><span class="linenum">30</span>            <span class="instance-variable">@requestPatch</span> = <span class="constant">Contato</span>.patch(<span class="string"><span class="delimiter">'</span><span class="content">/contacts/325</span><span class="delimiter">'</span></span>, <span class="key">body</span>: <span class="instance-variable">@bodyPatch</span>)</span>
+<span class="linenum">31</span>            puts <span class="instance-variable">@requestPatch</span>
+<span class="linenum">32</span>            </code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_13" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_13" class="passed">trabalhando</dt>
     <script type="text/javascript">moveProgressBar('81.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">com tag</span><span class='duration'>0.00043s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">com tag</span><span class='duration'>0.00081s</span></dd>
   </dl>
 </div>
 <div id="div_group_14" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_14" class="passed">andando</dt>
     <script type="text/javascript">moveProgressBar('87.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">com tag um</span><span class='duration'>0.00056s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">com tag um</span><span class='duration'>0.00048s</span></dd>
   </dl>
 </div>
 <div id="div_group_15" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_15" class="passed">usando</dt>
+    <script type="text/javascript">makeRed('div_group_15');</script>
+    <script type="text/javascript">makeRed('example_group_15');</script>
     <script type="text/javascript">moveProgressBar('93.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">token</span><span class='duration'>3.48038s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">token</span>
+      <span class="duration">2.43081s</span>
+      <div class="failure" id="failure_6">
+        <div class="message"><pre>  Failure/Error: @criar = Criar.post(&#39;/users&#39;, body: @body, headers: @header)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/utilizando_token_spec.rb:19:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/utilizando_token_spec.rb:19:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">17</span>        }
+<span class="linenum">18</span>
+<span class="offending"><span class="linenum">19</span>        <span class="instance-variable">@criar</span> = <span class="constant">Criar</span>.post(<span class="string"><span class="delimiter">'</span><span class="content">/users</span><span class="delimiter">'</span></span>, <span class="key">body</span>: <span class="instance-variable">@body</span>, <span class="key">headers</span>: <span class="instance-variable">@header</span>)</span>
+<span class="linenum">20</span>        puts <span class="instance-variable">@criar</span>.body
+<span class="linenum">21</span>        puts <span class="instance-variable">@criar</span>.parsed_response[<span class="string"><span class="delimiter">'</span><span class="content">data</span><span class="delimiter">'</span></span>][<span class="string"><span class="delimiter">'</span><span class="content">attributes</span><span class="delimiter">'</span></span>][<span class="string"><span class="delimiter">'</span><span class="content">auth-token</span><span class="delimiter">'</span></span>]</code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_16" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_16" class="passed">fazer uma requisicao</dt>
+    <script type="text/javascript">makeRed('div_group_16');</script>
+    <script type="text/javascript">makeRed('example_group_16');</script>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">get</span><span class='duration'>0.55634s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">get</span>
+      <span class="duration">0.29151s</span>
+      <div class="failure" id="failure_7">
+        <div class="message"><pre>  Failure/Error: @melhor_opcao = Contato.get(&#39;/contacts/7&#39;)
+
+  OpenSSL::SSL::SSLError:
+    SSL_connect returned=1 errno=0 state=error: certificate verify failed (unspecified certificate verification error)
+  # ./spec/validando_respostas_spec.rb:3:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/validando_respostas_spec.rb:3:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">1</span><span class="keyword">describe</span> <span class="string"><span class="delimiter">'</span><span class="content">fazer uma requisicao</span><span class="delimiter">'</span></span>, <span class="symbol">:httGetResponse</span> <span class="keyword">do</span>
+<span class="linenum">2</span>    <span class="keyword">it</span> <span class="string"><span class="delimiter">'</span><span class="content">get</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+<span class="offending"><span class="linenum">3</span>        <span class="instance-variable">@melhor_opcao</span> = <span class="constant">Contato</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/contacts/7</span><span class="delimiter">'</span></span>)</span>
+<span class="linenum">4</span>        <span class="comment"># puts @melhor_opcao   </span>
+<span class="linenum">5</span>        <span class="comment"># puts @melhor_opcao.code</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>7.34114 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "16 examples, 0 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>5.38354 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "16 examples, 7 failures";</script>
 </div>
 </div>
 </body>
